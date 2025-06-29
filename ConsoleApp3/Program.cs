@@ -253,6 +253,14 @@ namespace ConsoleApp3
                 Console.WriteLine($"Ad: {emp.Name}, Sobe: {emp.Department}, Emek haqqi: {emp.Salary} AZN");
             }
 
+            Console.WriteLine();
+
+            //23
+            var januaryOrders2024 = orders.Where(o => o.OrderDate.Year == 2024 && o.OrderDate.Month == 1).OrderBy(o => o.Amount).ToList();
+            foreach (var order in januaryOrders2024)
+            {
+                Console.WriteLine($"ID: {order.Id}, Ad: {order.CustomerName}, Mebleg: ${order.Amount}, Tarix: {order.OrderDate}");
+            }
         }
     }
 }
